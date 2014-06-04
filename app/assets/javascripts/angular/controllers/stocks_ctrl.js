@@ -1,4 +1,3 @@
-app.controller('StocksCtrl', ['$scope', '$resource', function($scope, $resource) {
-  var Stocks = $resource('/api/stocks');
-  $scope.stocks = Stocks.query();
+app.controller('StocksCtrl', ['$scope', 'Stock', function($scope, Stock) {
+  $scope.stocks = Stock.all();
 }]);

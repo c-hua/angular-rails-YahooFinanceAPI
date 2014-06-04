@@ -1,9 +1,9 @@
 <h1>Watchlist</h1>
-<form>
-  <input type="text" ng-model='newSymbol' placeholder="Enter a symbol">
-  <input type="submit" value="Add">
-</form>
 <div ng-controller="StocksCtrl">
+  <form ng-submit="createStock()">
+    <input type="text" ng-model='newSymbol' placeholder="Enter a symbol">
+    <input type="submit" value="Add">
+  </form>
   <ul>
     <li ng-repeat="stock in stocks">
       {{stock.symbol}}, {{stock.name}}

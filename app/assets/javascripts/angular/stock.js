@@ -6,7 +6,10 @@ app.factory('Stock', ['$resource', function($resource) {
     return this.service.query();
   };
   Stock.prototype.delete = function(stId) {
-    this.service.remove({stockId: stId});
+    return this.service.remove({stockId: stId});
   };
-  return new Stock; 
+  Stock.prototype.create = function(attr) {
+    return this.service.save(attr);
+  }
+  return new Stock;
 }]);

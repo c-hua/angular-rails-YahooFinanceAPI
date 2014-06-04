@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :stocks
+
   get 'watchlist/index'
 
   root 'watchlist#index'

@@ -1,9 +1,9 @@
-Rails.application.routes.draw do
-  resources :stocks
-
-  get 'watchlist/index'
-
+Stockwatch::Application.routes.draw do
+  scope :api do
+    resources :stocks, only: [:index], defaults: {format: :json}
+  end
   root 'watchlist#index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
